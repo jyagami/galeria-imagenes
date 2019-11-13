@@ -1,0 +1,179 @@
+:root {
+    /* color */
+    --nav-color: whitesmoke;
+    --color-hover-box: rgba(228, 227, 227, .5);
+    --color-hover-text: black;
+    --color-link-header: rgb(53, 53, 53);
+    /* texto */
+    --font-small: .5em;
+    --font-normal: 1em;
+    --font-title: 2em;
+    --font-big: 3em;
+    /* Z - index */
+    --z-index-back: -10;
+    --z-index-nav: 100;
+}
+
+body {
+    margin: 0;
+    margin-top: 5em;
+    font-family: 'Open Sans', sans-serif;
+    /* margin-bottom: 3000px; */
+}
+
+.title {
+    font-size: var(--font-big);
+}
+
+.header-main {
+    position: fixed;
+    top: 0;
+    z-index: var(--z-index-nav);
+    width: 100%;
+    height: 4rem;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-menu {
+    position: relative;
+    margin: auto;
+}
+
+.header-main img {
+    width: 4em;
+    margin: .5em;
+}
+
+.header-main li {
+    list-style: none;
+    display: inline-block;
+    margin: .5em;
+    width: 5em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.header-main li:hover {
+    background-color: var(--color-hover-box);
+}
+
+.header-main a {
+    text-decoration: none;
+    color: var(--color-link-header);
+}
+
+.header-main a:hover {
+    color: var(--color-hover-text);
+}
+
+.search-img {
+    height: 1.2em;
+    opacity: .8;
+    position: relative;
+    top: .8em;
+}
+
+.header-main .search input {
+    position: absolute;
+    right: 4.5em;
+    top: 1.3em;
+    width: 2em;
+    height: 1.8em;
+    border-radius: 5px;
+    border: solid 1px rgba(128, 128, 128, .8);
+    transition: width .2s;
+    padding: .2em;
+}
+
+.header-main:hover input {
+    width: 15em;
+}
+
+.paralax {
+    position: absolute;
+    top: 3em;
+    z-index: var(--z-index-back);
+    background-image: url(img/girasoles-hd.jpg);
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40em;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.paralax p {
+    position: relative;
+    top: 10%;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    line-height: 1.8;
+    padding: 0 .5em;
+}
+
+.back-shadow {
+    margin-top: -2em;
+    background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    height: 100%;
+}
+
+
+/* GALERIA DE FOTOS */
+
+.content {
+    position: relative;
+    top: 38rem;
+    padding: 6em 2em;
+    background-color: #F4F4F4;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    margin: 2em 2em;
+    /* border: solid 1px black; 
+    border-radius: 5px;
+    background-image: url("img/galery/image1.jpg"); 
+    background-size: cover;*/
+    height: 400px;
+    width: 250px;
+}
+
+.card-img {
+    border-radius: 5px;
+    width: 250px;
+    height: 400px;
+    background-size: cover;
+}
+
+.card-title {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: all .3s;
+}
+
+.content .card .card-title p {
+    font-size: var(--font-title);
+    margin: 70% 0;
+    display: none;
+    transition: all .5s;
+}
+
+.card-title:hover {
+    background-color: rgba(0,0,0,.5);
+}
+.content .card:hover .card-title p {
+    display: block;
+}
