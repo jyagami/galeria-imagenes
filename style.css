@@ -19,7 +19,8 @@ body {
     margin: 0;
     margin-top: 5em;
     font-family: 'Open Sans', sans-serif;
-    /* margin-bottom: 3000px; */
+    /* ocultamos el scroll horizontal */
+    overflow-x: hidden;
 }
 /* FONT SIZING */
 .title {
@@ -42,6 +43,7 @@ body {
 
 .header-nav {
     display: flex;
+    box-sizing: border-box;
 }
 
 .header-menu {
@@ -57,10 +59,29 @@ body {
 .header-main li {
     list-style: none;
     display: inline-block;
-    margin: .5em;
+    /* margin: .5em; */
+    
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+
     width: 5em;
     text-align: center;
     border-radius: 5px;
+}
+
+.header-main li::after {
+    display: block;
+    content: '';
+    background: grey;
+    width: 0;
+    height: 0;
+    transition: all .2s;
+}
+.header-main li:hover::after {
+    width: 100%;
+    height: 2px;
 }
 
 .header-main li:hover {
@@ -74,6 +95,7 @@ body {
 
 .header-main a:hover {
     color: var(--color-hover-text);
+
 }
 
 .search-img {
@@ -115,6 +137,9 @@ body {
     height: 40em;
     color: whitesmoke;
     overflow: hidden;
+    /* borrar las siguiente linea si se presenta algun problema xd */
+    transform: scale(1.15);
+    
 }
 
 .paralax p {
@@ -123,6 +148,8 @@ body {
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
     line-height: 1.8;
     padding: 0 .5em;
+    /* escala equivalente a la del paralax */
+    transform: scale(.85);
 }
 
 .back-shadow {
@@ -130,6 +157,10 @@ body {
     background-color: rgba(0, 0, 0, .3);
     width: 100%;
     height: 100%;
+}
+
+.paralax .p-description {
+    padding: 0 2em;
 }
 
 
@@ -152,6 +183,14 @@ body {
     background-size: cover;*/
     height: 400px;
     width: 250px;
+    transition: all .5s;
+    /* linea sin importancia xd */
+    transform: scale(.95);
+}
+
+.card:hover {
+    transform: translate(0, -5px);
+    box-shadow: 3px 3px 8px gray;
 }
 
 .card-img {
@@ -167,20 +206,20 @@ body {
     text-align: center;
     width: 100%;
     height: 100%;
-    color: white;
-    transition: all .3s;
+    color: whitesmoke;
+    transition: all .5s;
 }
 
 .content .card .card-title p {
     font-size: var(--font-title-normal);
     margin-top: 120%;
     display: none;
-    transition: all .5s;
+    transition: all 1.5s;
 }
 
 .card-title:hover {
-    /* background-color: rgba(0,0,0,.5); */
-    background-image: linear-gradient(to top, black, rgba(0,0,0,.1)) ;
+    background-color: rgba(0,0,0,.5);
+    /* background-image: linear-gradient(to top, black, rgba(0,0,0,.1)) ; */
 }
 .content .card:hover .card-title p {
     display: block;
@@ -197,7 +236,7 @@ footer {
     height: 60vh;
     /* background-image: linear-gradient(#F4F4F4 1%, #9c9c9c); */
     /* background: #9c9c9c; */
-    background-color: black;
+    background-color: #222;
 }
 footer .logo {
     position: absolute;
@@ -217,7 +256,7 @@ footer .contact-me {
     padding-left: 1em ;
     border-left: solid 1px white;
 
-    color: white;
+    color: whitesmoke;
 }
 
 footer .follow-me {
@@ -228,19 +267,9 @@ footer .follow-me {
     padding-left: 1em ;
     border-left: solid 1px white;
 
-    color: white;
+    color: whitesmoke;
 }
 
 footer a {
     padding: .5em;
 }
-/* 
-footer .r-gradient {
-    position: absolute;
-    left: 5%;
-    box-sizing: border-box;
-    width: 200px;
-    height: 140px;
-    background-image: radial-gradient(white 75%, black);
-    border-radius: 30px;
-} */
